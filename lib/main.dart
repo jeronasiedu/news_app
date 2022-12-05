@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:news_app/pages/home_page.dart';
+import 'package:news_app/theme/theme.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,13 +14,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'NEWS APP',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        colorSchemeSeed: Colors.deepPurple,
-        useMaterial3: true,
-        textTheme: GoogleFonts.latoTextTheme(
-          Theme.of(context).textTheme,
-        ),
-      ),
+      theme: lightTheme,
+      darkTheme: darkTheme,
       home: const HomePage(),
     );
   }

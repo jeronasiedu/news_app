@@ -40,8 +40,8 @@ class News extends StatelessWidget {
                 children: [
                   Text(
                     "${news.author} . ${news.time}",
-                    style: const TextStyle(
-                      color: Colors.black54,
+                    style: TextStyle(
+                      color: Theme.of(context).hintColor,
                     ),
                   ),
                   const SizedBox(height: 5),

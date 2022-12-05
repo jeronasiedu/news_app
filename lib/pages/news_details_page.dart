@@ -13,7 +13,7 @@ class NewsDetailsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     void readMore() async {
-      final Uri uri = Uri.parse(news.readMoreUrl!);
+      final Uri uri = Uri.parse(news.url);
       if (!await launchUrl(uri, mode: LaunchMode.externalApplication)) {
         ScaffoldMessenger.of(context).showSnackBar(
           const SnackBar(content: Text("Error opening url")),
@@ -74,12 +74,11 @@ class NewsDetailsPage extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(height: 20),
-                  if (news.readMoreUrl != null)
-                    TextButton(
-                        onPressed: () {
-                          readMore();
-                        },
-                        child: const Text("Read More"))
+                  TextButton(
+                      onPressed: () {
+                        readMore();
+                      },
+                      child: const Text("Read More"))
                 ],
               ),
             ),

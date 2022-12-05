@@ -93,6 +93,45 @@ class _HomePageState extends State<HomePage> {
               const Text("Daily Feed")
             ],
           ),
+          actions: [
+            Padding(
+              padding: const EdgeInsets.only(right: 8.0),
+              child: IconButton(
+                onPressed: () {
+                  // open bottom sheet
+                  showModalBottomSheet(
+                    context: context,
+                    builder: (context) {
+                      return SizedBox(
+                        height: MediaQuery.of(context).size.height * 0.4,
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Column(
+                            children: [
+                              Center(
+                                child: Container(
+                                  width: 50,
+                                  height: 5,
+                                  decoration: BoxDecoration(
+                                    color: Theme.of(context)
+                                        .hintColor
+                                        .withOpacity(0.2),
+                                    borderRadius: BorderRadius.circular(10),
+                                  ),
+                                ),
+                              )
+                            ],
+                          ),
+                        ),
+                      );
+                    },
+                  );
+                },
+                splashRadius: 22,
+                icon: const Icon(Icons.settings),
+              ),
+            ),
+          ],
           bottom: TabBar(
             indicatorColor: Theme.of(context).colorScheme.secondary,
             indicatorSize: TabBarIndicatorSize.label,

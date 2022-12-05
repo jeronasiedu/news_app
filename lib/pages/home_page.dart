@@ -1,6 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:ionicons/ionicons.dart';
 import 'package:news_app/models/news_model.dart';
 import 'package:news_app/utils/my_logger.dart';
 import 'package:news_app/widgets/news.dart';
@@ -103,7 +104,7 @@ class _HomePageState extends State<HomePage> {
                     context: context,
                     builder: (context) {
                       return SizedBox(
-                        height: MediaQuery.of(context).size.height * 0.4,
+                        height: MediaQuery.of(context).size.height * 0.48,
                         child: Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: Column(
@@ -119,7 +120,63 @@ class _HomePageState extends State<HomePage> {
                                     borderRadius: BorderRadius.circular(10),
                                   ),
                                 ),
-                              )
+                              ),
+                              const SizedBox(height: 10),
+                              const CircleAvatar(
+                                radius: 60,
+                                backgroundImage:
+                                    AssetImage('assets/profile.jpg'),
+                              ),
+                              const SizedBox(height: 10),
+                              const Text(
+                                "Tetteh Jeron Asiedu",
+                                style: TextStyle(
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                              const SizedBox(height: 10),
+                              // some short note about me, social icons and a button to open my website
+                              const Text(
+                                "Hi there, thanks for downloading my app, I'm a software developer and this is my first flutter app. I hope you like it. If you do, please consider giving it a 5 star rating on the play store. Thanks!",
+                                textAlign: TextAlign.center,
+                              ),
+                              const SizedBox(height: 10),
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  IconButton(
+                                    onPressed: () {},
+                                    icon: const Icon(Ionicons.logo_github),
+                                    splashRadius: 22,
+                                  ),
+                                  const SizedBox(
+                                    width: 10,
+                                  ),
+                                  IconButton(
+                                    onPressed: () {},
+                                    icon: const Icon(Ionicons.logo_linkedin),
+                                    color: Colors.blue[800],
+                                    splashRadius: 22,
+                                  ),
+                                  const SizedBox(
+                                    width: 10,
+                                  ),
+                                  IconButton(
+                                    onPressed: () {},
+                                    icon: const Icon(Ionicons.logo_twitter),
+                                    color: Colors.blue,
+                                    splashRadius: 22,
+                                  ),
+                                ],
+                              ),
+                              // privacy policy
+                              const SizedBox(height: 8),
+                              TextButton.icon(
+                                onPressed: () {},
+                                icon: const Icon(Ionicons.document_text),
+                                label: const Text("Privacy Policy"),
+                              ),
                             ],
                           ),
                         ),

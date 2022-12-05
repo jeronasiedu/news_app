@@ -4,6 +4,7 @@ import 'package:intl/intl.dart';
 import 'package:ionicons/ionicons.dart';
 import 'package:news_app/models/news_model.dart';
 import 'package:news_app/utils/my_logger.dart';
+import 'package:news_app/utils/open_link.dart';
 import 'package:news_app/widgets/news.dart';
 
 class HomePage extends StatefulWidget {
@@ -75,8 +76,6 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    // get today's date formatted like this Friday, June 16th
-
     return DefaultTabController(
       length: tabs.length,
       child: Scaffold(
@@ -146,7 +145,12 @@ class _HomePageState extends State<HomePage> {
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
                                   IconButton(
-                                    onPressed: () {},
+                                    onPressed: () {
+                                      openLink(
+                                        context: context,
+                                        url: "https:github.com/jeronasiedu",
+                                      );
+                                    },
                                     icon: const Icon(Ionicons.logo_github),
                                     splashRadius: 22,
                                   ),
@@ -154,7 +158,13 @@ class _HomePageState extends State<HomePage> {
                                     width: 10,
                                   ),
                                   IconButton(
-                                    onPressed: () {},
+                                    onPressed: () {
+                                      openLink(
+                                        context: context,
+                                        url:
+                                            "https://www.linkedin.com/in/jeronasiedu",
+                                      );
+                                    },
                                     icon: const Icon(Ionicons.logo_linkedin),
                                     color: Colors.blue[800],
                                     splashRadius: 22,
@@ -163,7 +173,13 @@ class _HomePageState extends State<HomePage> {
                                     width: 10,
                                   ),
                                   IconButton(
-                                    onPressed: () {},
+                                    onPressed: () {
+                                      // open twitter profile
+                                      openLink(
+                                        context: context,
+                                        url: "https://twitter.com/norej_udeisa",
+                                      );
+                                    },
                                     icon: const Icon(Ionicons.logo_twitter),
                                     color: Colors.blue,
                                     splashRadius: 22,
@@ -173,7 +189,14 @@ class _HomePageState extends State<HomePage> {
                               // privacy policy
                               const SizedBox(height: 8),
                               TextButton.icon(
-                                onPressed: () {},
+                                onPressed: () {
+                                  // open privacy policy
+                                  openLink(
+                                    context: context,
+                                    url:
+                                        "https://github.com/jeronasiedu/news_app/blob/main/privacy_policy.md",
+                                  );
+                                },
                                 icon: const Icon(Ionicons.document_text),
                                 label: const Text("Privacy Policy"),
                               ),
